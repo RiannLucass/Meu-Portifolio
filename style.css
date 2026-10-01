@@ -1,0 +1,2334 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   VARIÁVEIS
+========================================= */
+
+:root {
+    --orange: #e58a16;
+    --orange-dark: #b84700;
+
+    --black: #050606;
+    --gray: #777;
+    --white: #eeeeee;
+}
+
+/* =========================================
+   HTML / BODY
+========================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--black);
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+/* =========================================
+   PORTFÓLIO
+========================================= */
+
+.portfolio {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+/* =========================================
+   FUNDO
+========================================= */
+
+.background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(rgba(5, 7, 7, 0.911), rgba(5, 7, 7, 0.87)),
+        url("Img/fundo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+/* =========================================
+   TELA PRINCIPAL
+========================================= */
+
+.screen {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.screen-header {
+    margin-top: 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.player-name {
+    font-size: 38px;
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    color: var(--white);
+
+    margin-top: 16px;
+}
+
+.player-role {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: var(--gray);
+}
+
+.player-role span {
+    color: var(--orange);
+}
+
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
+
+.main-content {
+    width: 100%;
+    max-width: 1250px;
+
+    height: 620px;
+
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+/* =========================================
+   MENU PRINCIPAL
+========================================= */
+
+.loadout-menu {
+    width: 750px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 9px;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   CATEGORIAS
+========================================= */
+
+.category {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+/* =========================================
+   TÍTULO DA CATEGORIA
+========================================= */
+
+.category-title {
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--gray);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-title span {
+    display: inline-block;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.category-title span:hover {
+    transform: scale(1.2);
+    color: var(--orange-dark);
+    cursor: pointer;
+}
+
+/* =========================================
+   LISTA DE ITENS
+========================================= */
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+/* =========================================
+   ITEM
+========================================= */
+
+.item {
+    position: relative;
+
+    width: 100%;
+    height: 62px;
+
+    padding: 0 13px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 5px;
+
+    background: rgba(25, 27, 26, 0.75);
+
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.item:hover {
+    cursor: pointer;
+
+    border-color: var(--orange);
+
+    background: rgb(35, 37, 36);
+}
+
+/* =========================================
+   NOME DO ITEM
+========================================= */
+
+.item span {
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: var(--white);
+
+    transition: color 0.3s ease;
+}
+
+.item:hover span {
+    color: var(--orange);
+}
+
+/* =========================================
+   PEQUENA LINHA DO ITEM
+========================================= */
+
+.item small {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--gray);
+}
+
+/* =========================================
+   PERSONAGEM
+========================================= */
+
+.character {
+    position: relative;
+
+    width: 400px;
+    height: 620px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   IMAGEM DO PERSONAGEM
+========================================= */
+
+.character-image {
+    width: 100%;
+    height: auto;
+
+    max-height: 100%;
+
+    object-fit: contain;
+    object-position: bottom center;
+
+    display: block;
+
+    transform: translateY(-45px);
+
+    filter: brightness(0.9) drop-shadow(0 10px 30px rgba(0, 0, 0, 0.45));
+
+    /* Desaparecimento gradual na parte inferior */
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            black 75%,
+            rgba(0, 0, 0, 0.8) 84%,
+            rgba(0, 0, 0, 0.4) 92%,
+            transparent 100%);
+
+    mask-image: linear-gradient(to bottom,
+            black 75%,
+            rgba(0, 0, 0, 0.8) 84%,
+            rgba(0, 0, 0, 0.4) 92%,
+            transparent 100%);
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.bottom-info {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 45px;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(5, 6, 6, 0.493);
+}
+
+.version,
+.instruction {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #e58b16a2;
+}
+
+/* =========================================
+   MODAIS
+========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    backdrop-filter: blur(4px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 100;
+}
+
+/* =========================================
+   MODAL ABERTO
+========================================= */
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+/* =========================================
+   CONTEÚDO DO MODAL
+========================================= */
+
+.modal-content {
+    position: relative;
+
+    width: 600px;
+    max-width: 90%;
+
+    padding: 35px;
+
+    background: rgba(10, 12, 11, 0.97);
+
+    border: 1px solid rgba(229, 138, 22, 0.6);
+
+    border-radius: 5px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+
+    transform: scale(0.9) translateY(20px);
+
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* =========================================
+   TÍTULO DO MODAL
+========================================= */
+
+.modal-content h2 {
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    color: var(--white);
+
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   LINHA DO MODAL
+========================================= */
+
+.modal-line {
+    width: 100%;
+    height: 1px;
+
+    margin-bottom: 25px;
+
+    background: var(--orange);
+}
+
+/* =========================================
+   TEXTO DO MODAL
+========================================= */
+
+.modal-content p {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.5px;
+
+    color: #aaa;
+}
+
+/* =========================================
+   BOTÃO FECHAR
+========================================= */
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--gray);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--orange);
+
+    transform: scale(1.15);
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline-modal {
+    width: 750px;
+    max-width: 90%;
+
+    max-height: 80vh;
+
+    overflow: hidden;
+}
+
+/* Área onde a Timeline rola */
+
+.timeline {
+    position: relative;
+
+    height: 55vh;
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    padding: 40px 20px 80px;
+}
+
+/* =========================================
+   SCROLLBAR DA TIMELINE
+========================================= */
+
+.timeline::-webkit-scrollbar {
+    width: 5px;
+}
+
+.timeline::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.timeline::-webkit-scrollbar-thumb {
+    background: var(--orange);
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+    background: var(--orange-dark);
+}
+
+/* =========================================
+   LINHA CENTRAL
+========================================= */
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    background: rgba(229, 138, 22, 0.45);
+
+    transform: translateX(-50%);
+}
+
+/* =========================================
+   ITEM DA TIMELINE
+========================================= */
+
+.timeline-item {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   PONTO DA TIMELINE
+========================================= */
+
+.timeline-dot {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid var(--orange);
+
+    background: var(--black);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* =========================================
+   CARD DA TIMELINE
+========================================= */
+
+.timeline-card {
+    width: 42%;
+
+    padding: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 4px;
+
+    background: rgba(25, 27, 26, 0.8);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* =========================================
+   POSIÇÃO DOS CARDS
+========================================= */
+
+/* Cards da esquerda */
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(odd) .timeline-card {
+    margin-right: auto;
+}
+
+/* Cards da direita */
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
+}
+
+.timeline-item:nth-child(even) .timeline-card {
+    margin-left: auto;
+}
+
+/* =========================================
+   ANO
+========================================= */
+
+.timeline-year {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--orange);
+}
+
+/* =========================================
+   TÍTULO DO CARD
+========================================= */
+
+.timeline-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: var(--white);
+}
+
+/* =========================================
+   DESCRIÇÃO DO CARD
+========================================= */
+
+.timeline-card p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.4px;
+
+    color: var(--gray);
+}
+
+/* =========================================
+   HOVER DA TIMELINE
+========================================= */
+
+.timeline-card:hover {
+    border-color: var(--orange);
+
+    background: rgba(35, 37, 36, 0.9);
+
+    transform: translateY(-3px);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--orange);
+
+    box-shadow:
+        0 0 0 4px rgba(229, 138, 22, 0.1),
+        0 0 15px rgba(229, 138, 22, 0.35);
+
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skill-modal {
+    width: 700px;
+    max-width: 90%;
+
+    max-height: 80vh;
+
+    overflow: hidden;
+}
+
+/* =========================================
+   ÁREA INTERNA DAS SKILLS
+========================================= */
+
+.skill-scroll {
+    height: 55vh;
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+}
+
+/* =========================================
+   SCROLLBAR DAS SKILLS
+========================================= */
+
+.skill-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.skill-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.skill-scroll::-webkit-scrollbar-thumb {
+    background: var(--orange);
+}
+
+.skill-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--orange-dark);
+}
+
+/* =========================================
+   DESCRIÇÃO DA SKILL
+========================================= */
+
+.skill-description {
+    margin-bottom: 30px;
+}
+
+.skill-description p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.4px;
+
+    color: #aaa;
+}
+
+/* =========================================
+   TÍTULO DOS CERTIFICADOS
+========================================= */
+
+.certificates-title {
+    margin-bottom: 15px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--orange);
+}
+
+/* =========================================
+   LISTA DE CERTIFICADOS
+========================================= */
+
+.certificates {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+/* =========================================
+   CERTIFICADO
+========================================= */
+
+.certificate {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 4px;
+
+    background: rgba(25, 27, 26, 0.8);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.certificate:hover {
+    border-color: var(--orange);
+
+    background: rgba(35, 37, 36, 0.9);
+}
+
+/* =========================================
+   IMAGEM DO CERTIFICADO
+========================================= */
+
+.certificate-image {
+    width: 180px;
+    height: 115px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 3px;
+
+    cursor: zoom-in;
+
+    background: #111;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+.certificate-image:hover img {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   INFORMAÇÕES DO CERTIFICADO
+========================================= */
+
+.certificate-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.certificate-info h4 {
+    font-size: 13px;
+
+    letter-spacing: 0.8px;
+
+    color: var(--white);
+}
+
+.certificate-info>span {
+    font-size: 10px;
+
+    letter-spacing: 0.4px;
+
+    color: var(--gray);
+}
+
+/* =========================================
+   TAGS DAS TECNOLOGIAS
+========================================= */
+
+.certificate-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 4px;
+}
+
+.certificate-tag {
+    padding: 4px 7px;
+
+    border: 1px solid rgba(229, 138, 22, 0.45);
+
+    border-radius: 3px;
+
+    background: rgba(229, 138, 22, 0.06);
+
+    font-size: 9px !important;
+
+    letter-spacing: 1px;
+
+    color: var(--orange) !important;
+}
+
+/* =========================================
+   VISUALIZADOR DO CERTIFICADO
+========================================= */
+
+.certificate-viewer {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(6px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 200;
+}
+
+/* =========================================
+   VISUALIZADOR ABERTO
+========================================= */
+
+.certificate-viewer.active {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+/* =========================================
+   CERTIFICADO AMPLIADO
+========================================= */
+
+.certificate-viewer img {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(229, 138, 22, 0.6);
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+
+    transform: scale(0.9);
+
+    transition: transform 0.25s ease;
+}
+
+.certificate-viewer.active img {
+    transform: scale(1);
+}
+
+/* =========================================
+   BOTÃO FECHAR DO CERTIFICADO
+========================================= */
+
+.certificate-viewer-close {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 2;
+}
+
+.certificate-viewer-close:hover {
+    color: var(--orange);
+
+    transform: scale(1.15);
+}
+
+/* =========================================
+   PROJETOS
+========================================= */
+
+.project-modal {
+    width: 900px;
+    max-width: 90%;
+}
+
+/* =========================================
+   CONTEÚDO DO PROJETO
+========================================= */
+
+.project-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+/* =========================================
+   PREVIEW
+========================================= */
+
+.project-preview {
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 4px;
+
+    background: #111;
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.project-preview:hover img {
+    transform: scale(1.03);
+}
+
+/* =========================================
+   INFORMAÇÕES
+========================================= */
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.project-info h3 {
+    font-size: 20px;
+
+    letter-spacing: 1px;
+
+    color: var(--white);
+}
+
+.project-info>p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.4px;
+
+    color: var(--gray);
+}
+
+/* =========================================
+   SEÇÕES
+========================================= */
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 5px;
+}
+
+.project-section h4 {
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: var(--whitey);
+}
+
+.project-section p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: var(--gray);
+}
+
+/* =========================================
+   TAGS
+========================================= */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 5px;
+}
+
+.project-tag {
+    padding: 5px 8px;
+
+    border: 1px solid rgba(229, 138, 22, 0.45);
+
+    border-radius: 3px;
+
+    background: rgba(229, 138, 22, 0.06);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--orange);
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.project-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+.project-button {
+    padding: 9px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 3px;
+
+    background: rgba(25, 27, 26, 0.8);
+
+    color: var(--white);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.project-button:hover {
+    border-color: var(--orange);
+
+    color: var(--orange);
+
+    background: rgba(35, 37, 36, 0.9);
+}
+
+/* =========================
+   STATUS DO PROJETO
+========================= */
+
+.project-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 15px;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+
+/* Bolinha */
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Projeto concluído */
+
+.project-status.completed {
+    color: var(--orange);
+}
+
+.project-status.completed .status-dot {
+    background: var(--white);
+    box-shadow: 0 0 6px rgba(127, 191, 127, 0.5);
+}
+
+/* Projeto em desenvolvimento */
+
+.project-status.development {
+    color: var(--orange);
+}
+
+.project-status.development .status-dot {
+    background: var(--white);
+    box-shadow: 0 0 6px rgba(229, 138, 22, 0.5);
+}
+
+/* Projeto pausado */
+
+.project-status.paused {
+    color: #999;
+}
+
+.project-status.paused .status-dot {
+    background: #777;
+}
+
+.project-preview-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================================================
+   CONTACT MODAL
+===================================================== */
+
+.contact-modal {
+    width: 600px;
+    max-width: 90%;
+}
+
+
+/* =====================================================
+   CONTACT TITLE
+===================================================== */
+
+.contact-content h3 {
+    margin: 5px 0 0;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    color: var(--white);
+}
+
+/* =====================================================
+   CONTACT DESCRIPTION
+===================================================== */
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 14px;
+}
+
+.contact-content p {
+    max-width: 500px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    color: var(--gray);
+}
+
+/* =====================================================
+   CONTACT DATA
+===================================================== */
+
+.contact-data {
+    margin-top: 5px;
+    padding: 12px 18px;
+    border: 1px solid rgba(236, 157, 54, 0.35);
+    border-radius: 3px;
+    background: rgb(173 163 150 / 5%);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--orange);
+}
+
+/* =====================================================
+   CONTACT BUTTON
+===================================================== */
+
+.contact-button {
+    margin-top: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+
+    background: rgba(25, 27, 26, 0.8);
+
+    color: var(--white);
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.contact-button:hover {
+    border-color: var(--orange);
+
+    color: var(--orange);
+
+    background: rgba(35, 37, 36, 0.9);
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   BOTÃO INDISPONÍVEL
+========================= */
+
+.project-button-disabled {
+    color: #555;
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(20, 22, 21, 0.6);
+    cursor: pointer;
+}
+
+.project-button-disabled:hover {
+    color: var(--gray);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(25, 27, 26, 0.7);
+    transform: none;
+}
+
+/* =========================
+   PROJETO INDISPONÍVEL
+========================= */
+
+.project-unavailable-modal {
+    width: 600px;
+    max-width: 90%;
+}
+
+.project-unavailable-content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    text-align: left;
+}
+
+.project-unavailable-status {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--orange);
+}
+
+.project-unavailable-content h3 {
+    margin: 5px 0 0;
+
+    font-size: 18px;
+
+    letter-spacing: 0.5px;
+
+    color: var(--white);
+}
+
+.project-unavailable-content p {
+    max-width: 500px;
+
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+
+    color: var(--gray);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+
+/* =========================================================
+   TELA MÉDIA
+   701px ATÉ 1100px
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+
+    /* =========================
+       ESTRUTURA PRINCIPAL
+    ========================= */
+
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .portfolio {
+        min-height: 100vh;
+        height: auto;
+        overflow: visible;
+    }
+
+    .screen {
+        min-height: 100vh;
+        height: auto;
+        padding-bottom: 70px;
+    }
+
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
+    .screen-header {
+        margin-top: 35px;
+    }
+
+    .player-name {
+        font-size: 32px;
+        margin-top: 10px;
+    }
+
+    .player-role {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+
+    /* =========================
+       ÁREA PRINCIPAL
+    ========================= */
+
+    .main-content {
+        width: 92%;
+        max-width: 900px;
+
+        height: auto;
+
+        margin-top: 30px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .loadout-menu {
+        width: 100%;
+        max-width: 800px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .category {
+        gap: 8px;
+    }
+
+    .category-title {
+        font-size: 11px;
+    }
+
+    .item {
+        height: 58px;
+    }
+
+    .item span {
+        font-size: 11px;
+    }
+
+    .item small {
+        font-size: 7px;
+    }
+
+
+    /* =========================
+       PERSONAGEM
+    ========================= */
+
+    .character {
+        width: 260px;
+        height: 300px;
+
+        margin-top: 5px;
+        order:-1;
+    }
+
+    .character-image {
+        max-height: 320px;
+
+        transform: translateY(0);
+    }
+
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    .bottom-info {
+        position: relative;
+
+        margin-top: 20px;
+
+        height: 45px;
+    }
+
+
+    /* =========================
+       MODAIS
+    ========================= */
+
+    .modal {
+        padding: 25px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 90vw;
+
+        max-height: 88vh;
+
+        padding: 30px;
+
+        overflow-y: auto;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+
+    /* =========================
+       TIMELINE
+    ========================= */
+
+    .timeline-modal {
+        width: 90%;
+        max-width: 850px;
+    }
+
+    .timeline {
+        height: 60vh;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .timeline-card {
+        width: 43%;
+    }
+
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skill-modal {
+        width: 90%;
+        max-width: 700px;
+    }
+
+    .skill-scroll {
+        height: 55vh;
+    }
+
+
+    /* =========================
+       CERTIFICADOS
+    ========================= */
+
+    .certificate {
+        gap: 15px;
+    }
+
+    .certificate-image {
+        width: 160px;
+        height: 105px;
+    }
+
+
+    /* =========================
+       PROJETOS
+    ========================= */
+
+    .project-modal {
+        width: 92%;
+        max-width: 900px;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 20px;
+    }
+
+    .project-preview {
+        height: 250px;
+    }
+
+    .project-info {
+        gap: 10px;
+    }
+
+    .project-info > p,
+    .project-section p {
+        font-size: 10px;
+    }
+
+
+    /* =========================
+       VISUALIZADOR DE CERTIFICADO
+    ========================= */
+
+    .certificate-viewer {
+        padding: 25px;
+    }
+
+    .certificate-viewer img {
+        max-width: 88vw;
+        max-height: 85vh;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ATÉ 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =========================
+       ESTRUTURA PRINCIPAL
+    ========================= */
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .portfolio {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+
+        overflow: visible;
+    }
+
+    .screen {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+
+        padding: 0 15px 70px;
+    }
+
+
+    /* =========================
+       FUNDO
+    ========================= */
+
+    .background {
+        position: fixed;
+
+        background-position: center;
+    }
+
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
+    .screen-header {
+        width: 100%;
+
+        margin-top: 25px;
+
+        gap: 5px;
+    }
+
+    .player-name {
+        font-size: 27px;
+
+        letter-spacing: -1px;
+
+        margin-top: 5px;
+    }
+
+    .player-role {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       ÁREA PRINCIPAL
+    ========================= */
+
+    .main-content {
+        width: 100%;
+        max-width: 500px;
+
+        height: auto;
+
+        margin-top: 25px;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .loadout-menu {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .category {
+        width: 100%;
+
+        gap: 8px;
+    }
+
+    .category-title {
+        height: 25px;
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .item-list {
+        gap: 8px;
+    }
+
+    .item {
+        width: 100%;
+        height: 55px;
+
+        padding: 0 12px;
+    }
+
+    .item span {
+        font-size: 11px;
+
+        letter-spacing: 0.8px;
+    }
+
+    .item small {
+        font-size: 7px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    /* =========================
+       PERSONAGEM
+    ========================= */
+
+    .character {
+        width: 230px;
+        height: 260px;
+
+        margin-top: 0;
+        order:-1;
+    }
+
+    .character-image {
+        width: 100%;
+        max-height: 280px;
+
+        transform: translateY(0);
+    }
+
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    .bottom-info {
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 50px;
+
+        margin-top: 15px;
+
+        padding: 12px 5px;
+
+        gap: 10px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .version,
+    .instruction {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* =====================================================
+       MODAIS
+    ===================================================== */
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
+
+        max-height: 90vh;
+
+        padding: 25px 20px;
+
+        border-radius: 4px;
+
+        overflow-y: auto;
+    }
+
+    .modal-content h2 {
+        font-size: 17px;
+
+        letter-spacing: 2px;
+
+        padding-right: 20px;
+    }
+
+    .modal-line {
+        margin-bottom: 20px;
+    }
+
+    .modal-content p {
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+    .modal-close {
+        top: 8px;
+        right: 10px;
+
+        font-size: 23px;
+    }
+
+
+    /* =====================================================
+       SOBRE MIM / TEXTOS
+    ===================================================== */
+
+    #sobre-mim .modal-content,
+    #sobre-projeto .modal-content {
+        max-height: 88vh;
+    }
+
+
+    /* =====================================================
+       TIMELINE
+    ===================================================== */
+
+    .timeline-modal {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .timeline {
+        height: 65vh;
+        max-height: none;
+
+        padding: 25px 5px 50px 25px;
+    }
+
+    /* Linha fica mais para a esquerda */
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    .timeline-dot {
+        left: 10px;
+    }
+
+    /* Todos os cards ficam do mesmo lado */
+
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+
+        min-height: auto;
+
+        margin-bottom: 20px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-card,
+    .timeline-item:nth-child(even) .timeline-card {
+        width: calc(100% - 30px);
+
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .timeline-card {
+        width: calc(100% - 30px);
+
+        padding: 14px;
+    }
+
+    .timeline-year {
+        font-size: 9px;
+    }
+
+    .timeline-card h3 {
+        font-size: 11px;
+
+        line-height: 1.4;
+    }
+
+    .timeline-card p {
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skill-modal {
+        width: 100%;
+        max-width: 100%;
+
+        max-height: 90vh;
+    }
+
+    .skill-scroll {
+        height: 65vh;
+        max-height: none;
+
+        padding-right: 5px;
+    }
+
+    .skill-description {
+        margin-bottom: 25px;
+    }
+
+    .skill-description p {
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+    .certificates-title {
+        font-size: 10px;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* =====================================================
+       CERTIFICADOS
+    ===================================================== */
+
+    .certificates {
+        gap: 12px;
+    }
+
+    .certificate {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 12px;
+    }
+
+    .certificate-image {
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+    }
+
+    .certificate-info {
+        gap: 6px;
+    }
+
+    .certificate-info h4 {
+        font-size: 11px;
+    }
+
+    .certificate-info > span {
+        font-size: 9px;
+    }
+
+    .certificate-tag {
+        padding: 4px 6px;
+
+        font-size: 8px !important;
+    }
+
+
+    /* =====================================================
+       OUTROS
+    ===================================================== */
+
+    #outros .skill-scroll {
+        height: 65vh;
+    }
+
+
+    /* =====================================================
+       VISUALIZADOR DO CERTIFICADO
+    ===================================================== */
+
+    .certificate-viewer {
+        padding: 15px;
+    }
+
+    .certificate-viewer img {
+        max-width: 94vw;
+        max-height: 80vh;
+    }
+
+    .certificate-viewer-close {
+        top: 10px;
+        right: 15px;
+
+        font-size: 27px;
+    }
+
+
+    /* =====================================================
+       PROJETOS
+    ===================================================== */
+
+    .project-modal {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-content {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: stretch;
+    }
+
+    .project-preview-container {
+        width: 100%;
+    }
+
+    .project-preview {
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-info {
+        width: 100%;
+
+        gap: 10px;
+    }
+
+    .project-info > p {
+        font-size: 10px;
+
+        line-height: 1.7;
+    }
+
+    .project-section {
+        gap: 6px;
+
+        margin-top: 3px;
+    }
+
+    .project-section h4 {
+        font-size: 10px;
+    }
+
+    .project-section p {
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+    .project-tags {
+        gap: 5px;
+    }
+
+    .project-tag {
+        padding: 4px 6px;
+
+        font-size: 8px;
+    }
+
+    .project-buttons {
+        width: 100%;
+
+        margin-top: 5px;
+    }
+
+    .project-button {
+        width: 100%;
+
+        padding: 10px;
+
+        text-align: center;
+
+        font-size: 8px;
+    }
+
+    .project-status {
+        font-size: 8px;
+
+        margin-top: 10px;
+    }
+
+
+    /* =====================================================
+       PROJETO INDISPONÍVEL
+    ===================================================== */
+
+    .project-unavailable-modal {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-unavailable-content h3 {
+        font-size: 15px;
+
+        line-height: 1.4;
+    }
+
+    .project-unavailable-content p {
+        font-size: 10px;
+
+        line-height: 1.7;
+    }
+
+    .project-unavailable-status {
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       CONTATO
+    ===================================================== */
+
+    .contact-modal {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-content {
+        gap: 12px;
+    }
+
+    .contact-content h3 {
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+    .contact-content p {
+        font-size: 10px;
+
+        line-height: 1.7;
+    }
+
+    .contact-data {
+        width: 100%;
+
+        padding: 10px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.7px;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+    }
+
+    .contact-button {
+        width: 100%;
+
+        padding: 10px;
+
+        text-align: center;
+    }
+
+}
